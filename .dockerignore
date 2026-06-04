@@ -1,0 +1,13 @@
+node_modules
+dist
+.dockerignore
+Dockerfile
+docker-compose.yml
+server/node_modules
+server/uploaded
+npm-debug.log*
+yarn.lock
+.pnp*
+.vscode
+.git
+.gitignore

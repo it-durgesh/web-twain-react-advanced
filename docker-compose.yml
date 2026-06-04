@@ -1,0 +1,22 @@
+version: '3.9'
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    ports:
+      - "2020:2020"
+    volumes:
+      - ./server/uploaded:/usr/src/app/uploaded
+    restart: unless-stopped

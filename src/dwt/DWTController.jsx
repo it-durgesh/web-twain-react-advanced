@@ -724,7 +724,7 @@ export default class DWTController extends React.Component {
                                         </li>
                                         <li>
                                             <ul>
-                                                <li>
+                                                {/* <li>
                                                     {
                                                         this.state.deviceSetup.noUI ? "" : (
                                                             <label style={{ width: "32%", marginRight: "2%" }} ><input tabIndex="1" type="checkbox"
@@ -741,22 +741,22 @@ export default class DWTController extends React.Component {
                                                         checked={this.state.deviceSetup.bDuplex}
                                                         onChange={(e) => this.handleScannerSetupChange(e, "bDuplex")}
                                                     />Duplex</label>
-                                                </li>
+                                                </li> */}
                                                 <li>
                                                     <select tabIndex="1" style={{ width: "48%", marginRight: "4%" }}
                                                         value={this.state.deviceSetup.nPixelType}
                                                         onChange={(e) => this.handleScannerSetupChange(e, "nPixelType")}>
                                                         <option value="0">B&amp;W</option>
-                                                        <option value="1">Gray</option>
-                                                        <option value="2">Color</option>
+                                                        {/* <option value="1">Gray</option>
+                                                        <option value="2">Color</option> */}
                                                     </select>
                                                     <select tabIndex="1" style={{ width: "48%" }}
                                                         value={this.state.deviceSetup.nResolution}
                                                         onChange={(e) => this.handleScannerSetupChange(e, "nResolution")}>
-                                                        <option value="100">100 DPI</option>
+                                                        {/* <option value="100">100 DPI</option> */}
                                                         <option value="200">200 DPI</option>
-                                                        <option value="300">300 DPI</option>
-                                                        <option value="600">600 DPI</option>
+                                                        {/* <option value="300">300 DPI</option>
+                                                        <option value="600">600 DPI</option> */}
                                                     </select>
                                                 </li>
                                             </ul>
@@ -768,7 +768,7 @@ export default class DWTController extends React.Component {
                                 </div>
                             </li>
                         ) : ""}
-                        {this.state.bWin && (this.props.features & 0b10) ? (
+                        {/* {this.state.bWin && (this.props.features & 0b10) ? (
                             <li>
                                 <div className="divType" tabIndex="2" controlindex="2" onClick={(event) => this.handleTabs(event)} onKeyUp={(event) => this.handleTabs(event)}>
                                     <div className={this.state.shownTabs & 2 ? "mark_arrow expanded" : "mark_arrow collapsed"} ></div>
@@ -817,7 +817,7 @@ export default class DWTController extends React.Component {
                                     </ul>
                                 </div>
                             </li>
-                        ) : ""}
+                        ) : ""} */}
                         {(this.props.features & 0b1000) || (this.props.features & 0b10000) ? (
                             <li>
                                 <div className="divType" tabIndex="4" controlindex="8" onClick={(event) => this.handleTabs(event)} onKeyUp={(event) => this.handleTabs(event)}>
@@ -830,13 +830,13 @@ export default class DWTController extends React.Component {
                                                 <input tabIndex="4" style={{ width: "73%", marginLeft: "2%" }} type="text" size="20" value={this.state.saveFileName} onChange={(e) => this.handleFileNameChange(e)} /></label>
                                         </li>
                                         <li>
-                                            <label><input tabIndex="4" type="radio" value="bmp" name="ImageType" onClick={(e) => this.handleSaveConfigChange(e)} />BMP</label>
-                                            <label><input tabIndex="4" type="radio" value="jpg" name="ImageType" defaultChecked onClick={(e) => this.handleSaveConfigChange(e)} />JPEG</label>
-                                            <label><input tabIndex="4" type="radio" value="tif" name="ImageType" onClick={(e) => this.handleSaveConfigChange(e)} />TIFF</label>
-                                            <label><input tabIndex="4" type="radio" value="png" name="ImageType" onClick={(e) => this.handleSaveConfigChange(e)} />PNG</label>
-                                            <label><input tabIndex="4" type="radio" value="pdf" name="ImageType" onClick={(e) => this.handleSaveConfigChange(e)} />PDF</label>
+                                            {/* <label><input tabIndex="4" type="radio" value="bmp" name="ImageType" onClick={(e) => this.handleSaveConfigChange(e)} />BMP</label>
+                                            <label><input tabIndex="4" type="radio" value="jpg" name="ImageType" defaultChecked onClick={(e) => this.handleSaveConfigChange(e)} />JPEG</label> */}
+                                            <label><input tabIndex="4" type="radio" value="tif" name="ImageType" defaultChecked onClick={(e) => this.handleSaveConfigChange(e)} />TIFF</label>
+                                            {/* <label><input tabIndex="4" type="radio" value="png" name="ImageType" onClick={(e) => this.handleSaveConfigChange(e)} />PNG</label>
+                                            <label><input tabIndex="4" type="radio" value="pdf" name="ImageType" onClick={(e) => this.handleSaveConfigChange(e)} />PDF</label> */}
                                         </li>
-                                        <li>
+                                        {/* <li>
                                             <label><input tabIndex="4" type="checkbox"
                                                 checked={(this.state.saveFileFormat === "pdf" || this.state.saveFileFormat === "tif") && (this.state.bMulti ? "checked" : "")}
                                                 value="multiPage" disabled={(this.state.saveFileFormat === "pdf" || this.state.saveFileFormat === "tif") ? "" : "disabled"} onChange={(e) => this.handleSaveConfigChange(e)} />Upload Multiple Pages</label>
@@ -844,16 +844,16 @@ export default class DWTController extends React.Component {
                                                 ? <label>
                                                     <input tabIndex="4" title="Use Uploader" type="checkbox" onChange={(e) => this.toggleUseUploade(e)} />Use File Uploader</label>
                                                 : ""}
-                                        </li>
+                                        </li> */}
                                         <li className="tc">
-                                            {(this.props.features & 0b1000) ? <button tabIndex="4" className={this.props.buffer.count === 0 ? "majorButton disabled width_48p" : "majorButton enabled width_48p"} disabled={this.props.buffer.count === 0 ? "disabled" : ""} onClick={() => this.saveOrUploadImage('local')} >Save to Local</button> : ""}
+                                            {/* {(this.props.features & 0b1000) ? <button tabIndex="4" className={this.props.buffer.count === 0 ? "majorButton disabled width_48p" : "majorButton enabled width_48p"} disabled={this.props.buffer.count === 0 ? "disabled" : ""} onClick={() => this.saveOrUploadImage('local')} >Save to Local</button> : ""} */}
                                             {(this.props.features & 0b10000) ? <button tabIndex="4" className={this.props.buffer.count === 0 ? "majorButton disabled width_48p marginL_2p" : "majorButton enabled width_4p marginL_2p"} disabled={this.props.buffer.count === 0 ? "disabled" : ""} onClick={() => this.saveOrUploadImage('server')} >Upload to Server</button> : ""}
                                         </li>
                                     </ul>
                                 </div>
                             </li>
                         ) : ""}
-                        {(this.props.features & 0b100000) ? (
+                        {/* {(this.props.features & 0b100000) ? (
                             <li>
                                 <div className="divType" tabIndex="5" controlindex="16" onClick={(event) => this.handleTabs(event)} onKeyUp={(event) => this.handleTabs(event)}>
                                     <div className={this.state.shownTabs & 16 ? "mark_arrow expanded" : "mark_arrow collapsed"} ></div>
@@ -869,7 +869,7 @@ export default class DWTController extends React.Component {
                                     </ul>
                                 </div>
                             </li>
-                        ) : ""}
+                        ) : ""} */}
                     </ul>
                 </div>
                 {this.state.bShowRangePicker ? (
